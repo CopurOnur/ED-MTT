@@ -1,0 +1,53 @@
+program: train.py
+method: grid
+metric:
+  goal: minimize
+  name: validation_loss
+
+parameters:
+  #seed:
+  #  distribution: int_uniform
+  #  min: 1
+  #  max: 250
+  attributes:
+    values : [
+      ["gaze_seg"],
+      ["head_seg"],
+      ["gaze_seg", "head_seg"],
+      ["gaze_seg", "rot_seg"],
+      #["gaze_seg", "head_seg", "rot_seg"],
+      #["gaze_seg", "head_seg", "aus_seg"],
+      #["gaze_seg", "head_seg", "rot_seg", "aus_seg"]
+      #["rot_seg"],
+      #["head_seg","rot_seg"],
+      #["aus_seg"]
+      ["rot_seg","aus_seg"]
+
+      ]
+  #frame_size : 
+  #  values : [100,150,200]
+  #step_size :
+  #  values : [1,1.1, 1.2, 1.3]
+  #lstm_hidden_size:
+  #  values : [128,256, 512, 1024]
+  #lstm_hidden_laters:
+  #  values : [1,2,3]
+  #mlp_layer_1_size:
+  #  values : [256, 128, 64]
+  #mlp_layer_2_size:
+  #  values : [32, 16, 8]
+  #lr:
+  #  values : [1.0e-04, 3.0e-04, 5.0e-04, 1.0e-03]
+  #triplet_margin :
+  #  values :  [1,2,3]
+  #batch_size :
+  #  values : [8,16]
+    
+  
+  
+
+
+command:
+  - ${env}
+  - ${interpreter}
+  - ${program}

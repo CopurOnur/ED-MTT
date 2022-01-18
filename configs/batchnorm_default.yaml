@@ -1,0 +1,37 @@
+data: 
+  root : "/content/drive/MyDrive/Multi-task_Engagement_Detection/data/OpeFace/OpenFace_features/"
+  l_dir : '/content/drive/MyDrive/Multi-task_Engagement_Detection/data/Engagement_Labels.xlsx'
+  level : [0., 0.33, 0.66, 1.]
+  frame_size : 100
+  step_size : 1.2
+  gaze_range : [4,10]
+  head_range : [10,13]
+  rot_range : [13,16]
+  aus_range : [-35,-18]
+  attributes : ["gaze_seg", "rot_seg", "aus_seg"]
+  functions : ["length","maximum","minimum","variance"]
+  cols : ["gaze_cols", "head_cols", "aus_cols"]
+  batch_size : 16
+
+model:
+  lstm:
+    n_hidden : 1024
+    n_layers : 2
+  mlp:
+    h1 : 64
+    h2 : 32
+    out : 2
+  train:
+    dropout : 0
+    n_epochs : 450
+    lr : 0.00005
+    triplet_margin : 1
+    threshold : 2.5
+  
+  seed: 214
+
+
+defaults:
+  - hydra/job_logging: colorlog
+  - hydra/hydra_logging: colorlog
+

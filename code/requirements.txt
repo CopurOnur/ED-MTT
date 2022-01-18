@@ -1,0 +1,9 @@
+wandb
+scipy>
+stumpy
+torch
+pytorch-lightning
+torchmetrics
+hydra-core
+hydra_colorlog
+tsfresh
