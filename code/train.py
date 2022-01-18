@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1, '/content/drive/MyDrive/Multi-task_Engagement_Detection')
+sys.path.insert(1, '/content/ED-MTT/code')
 import dataloader
 import model
 import os
@@ -32,7 +32,7 @@ wandb.login()
 
 
 
-@hydra.main(config_path="/content/drive/MyDrive/Multi-task_Engagement_Detection/configs/",config_name="batchnorm_default")
+@hydra.main(config_path="/content/ED-MTT/configs/",config_name="batchnorm_default")
 def train(cfg: DictConfig):
 
   config = {
@@ -68,7 +68,7 @@ def train(cfg: DictConfig):
   early_stopping = EarlyStopping('validation_loss',
   divergence_threshold =cfg.model.train.threshold)
   checkpoint_callback = ModelCheckpoint(
-      dirpath="/content/drive/MyDrive/Multi-task_Engagement_Detection/tripletloss_checkpoints",
+      dirpath="/content/ED-MTT/checkpoints",
       filename="best-checkpoint",
       save_top_k=1,
       verbose = True,

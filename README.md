@@ -27,7 +27,7 @@ The proposed system first extracts features with OpenFace, then aggregates frame
 
 We evaluate the performance of ED-MTT on a publicly available ``[Engagement in The Wild](https://arxiv.org/abs/1804.00858)'' dataset which is comprised of separated training and validation sets.
 
-![Untitled](readme_files//Untitled.png)
+![Untitled](readme_files/Untitled.png)
 
 The dataset is comprised of 78 subjects (25 females and 53 males) whose ages are ranged from 19 to 27. Each subject is recorded while watching an approximately 5 minutes long stimulus video of a Korean Language lecture.
 
@@ -35,4 +35,46 @@ The dataset is comprised of 78 subjects (25 females and 53 males) whose ages are
 
 We compare the performance of ED-MTT with 9 different works from the state-of-the-art which will be reviewed in the rest of this section. Our results show that ED-MTT outperforms these state-of-the-art methods with at least a 5.74% improvement on MSE.
 
-![paper_performance.png](readme_files//paper_performance.png)
+![paper_performance.png](readme_files/paper_performance.png)
+
+## Repository structure
+
+```
+```
+ED-MTT
+│   README.md
+│   Engagement_Labels.txt
+|   ED-MTT.ipynb
+
+└───code
+│   │   dataloader.py
+|   |   model.py
+|   |   train.py
+|   |   test.py
+│   │   fix_path.py
+|   |   utils.py
+|   |   requirements.txt
+
+└───configs
+    │   batchnorm_default.yaml
+    │   sweep.yaml
+```
+```
+
+# Running the Code
+
+![Untitled](readme_files/Untitled%201.png)
+
+![Untitled](readme_files/Untitled%202.png)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cDfwW4JwmMabhMM48bfmVpmiO_qDCVtY?usp=sharing]
+
+To train the experiments and manage the experiments, we used PyTorch Lightning together with Weights&Biases. All the detailed explonations to;
+
+- Load data and pre-trained weights,
+- Train the model from scratch,
+- Manage expriments and hyper-parameter search with wandb,
+- Reproduce the results presented in the paper,
+
+are shown in [ED-MTT.ipynb colab notebook](https://colab.research.google.com/drive/1cDfwW4JwmMabhMM48bfmVpmiO_qDCVtY?usp=sharing).
+

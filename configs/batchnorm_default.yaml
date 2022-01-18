@@ -1,6 +1,6 @@
 data: 
-  root : "/content/drive/MyDrive/Multi-task_Engagement_Detection/data/OpeFace/OpenFace_features/"
-  l_dir : '/content/drive/MyDrive/Multi-task_Engagement_Detection/data/Engagement_Labels.xlsx'
+  root : "/content/ED-MTT/data/OpenFace_features/"
+  l_dir : '/content/ED-MTT/Engagement_Labels.xlsx'
   level : [0., 0.33, 0.66, 1.]
   frame_size : 100
   step_size : 1.2

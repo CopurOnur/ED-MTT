@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(1, '/content/drive/MyDrive/Multi-task_Engagement_Detection')
+sys.path.insert(1, '/content/ED-MTT/code')
 import dataloader
 import model
 import utils
@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 
 os.environ["CUBLAS_WORKSPACE_CONFIG"]=":4096:2"
 os.environ["HYDRA_FULL_ERROR"]="1"
-@hydra.main(config_path="/content/drive/MyDrive/Multi-task_Engagement_Detection/configs/",config_name="batchnorm_default")
+@hydra.main(config_path="/content/ED-MTT/configs/",config_name="batchnorm_default")
 def test(cfg: DictConfig):
 
   logger.info(OmegaConf.to_yaml(cfg))
