@@ -30,7 +30,7 @@ def test(cfg: DictConfig):
   
   data_module = dataloader.create_data_module(cfg)
 
-  best_model_path = "/content/drive/MyDrive/Multi-task_Engagement_Detection/tripletloss_checkpoints/best-checkpoint-v574.ckpt"
+  best_model_path = "/content/ED-MTT/pre-trained-weights.ckpt"
   trained_model = model.EngagementPredictor.load_from_checkpoint(
       best_model_path,
       n_features = data_module.train_dataset[0]["anchor_sequence"].shape[1],
@@ -51,8 +51,8 @@ def test(cfg: DictConfig):
     print(labels[-1])
 
   print("mse ",mean_squared_error(labels,predictions))
-  np.save("/content/drive/MyDrive/Multi-task_Engagement_Detection/predictions.npy", predictions)
-  np.save("/content/drive/MyDrive/Multi-task_Engagement_Detection/labels.npy", labels)
+  np.save("/content/ED-MTT/predictions.npy", predictions)
+  np.save("/content/ED-MTT/labels.npy", labels)
 if __name__ == "__main__":
 
   test()

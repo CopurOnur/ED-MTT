@@ -8,7 +8,7 @@ data:
   head_range : [10,13]
   rot_range : [13,16]
   aus_range : [-35,-18]
-  attributes : ["gaze_seg", "rot_seg", "aus_seg"]
+  attributes : ["gaze_seg", "head_seg", "aus_seg"]
   functions : ["length","maximum","minimum","variance"]
   cols : ["gaze_cols", "head_cols", "aus_cols"]
   batch_size : 16
