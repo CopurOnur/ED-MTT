@@ -1,6 +1,8 @@
-# ED-MTT
+# ED-MTT 
 
-A novel Engagement Detection with Multi-Task Training (ED-MTT) system which minimizes MSE and triplet loss together to determine the engagement level of students in an e-learning environment.
+A novel Engagement Detection with Multi-Task Training (ED-MTT) system which minimizes MSE and triplet loss together to determine the engagement level of students in an e-learning environment. You can check the colab notebook bellow for detailed explanatoins about data loading and code execution.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cDfwW4JwmMabhMM48bfmVpmiO_qDCVtY?usp=sharing)
 
 # **Introduction & Problem Definition**
 
@@ -40,7 +42,6 @@ We compare the performance of ED-MTT with 9 different works from the state-of-th
 ## Repository structure
 
 ```
-```
 ED-MTT
 │   README.md
 │   Engagement_Labels.txt
@@ -59,7 +60,6 @@ ED-MTT
     │   batchnorm_default.yaml
     │   sweep.yaml
 ```
-```
 
 # Running the Code
 
@@ -67,7 +67,6 @@ ED-MTT
 
 ![Untitled](readme_files/Untitled%202.png)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cDfwW4JwmMabhMM48bfmVpmiO_qDCVtY?usp=sharing]
 
 To train the experiments and manage the experiments, we used PyTorch Lightning together with Weights&Biases. All the detailed explonations to;
 
