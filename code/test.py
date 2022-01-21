@@ -39,20 +39,25 @@ def test(cfg: DictConfig):
   trained_model.freeze()
   predictions =[]
   labels = []
+  names = []
 
   for item in tqdm(data_module.val_dataloader()):
     sequence = item["anchor_sequence"]
     label = item["anchor_label"]
+    name = item["anchor_name"]
     #print(sequence,label)
     out_anchor_lstm, out_anchor_mlp = trained_model(sequence,label)
     predictions.append(out_anchor_mlp[0].numpy().mean())
     labels.append(label.item())
+    names.append(name[0])
     print(predictions[-1])
     print(labels[-1])
+    print(names[-1])
 
   print("mse ",mean_squared_error(labels,predictions))
   np.save("/content/ED-MTT/predictions.npy", predictions)
   np.save("/content/ED-MTT/labels.npy", labels)
+  np.save("/content/ED-MTT/names.npy", names)
 if __name__ == "__main__":
 
   test()

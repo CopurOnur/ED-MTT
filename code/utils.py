@@ -7,7 +7,7 @@ import torch
 #from captum.attr import IntegratedGradients, DeepLift, GradientShap, NoiseTunnel, FeatureAblation
 
 pd.set_option('display.max_columns', None)
-def plot_graph(predictions,labels):
+def plot_graph(predictions,labels,names):
   zer0_pred = []
   zer0_label = []
   one_pred = []
@@ -36,7 +36,7 @@ def plot_graph(predictions,labels):
   labels = zer0_label + one_label + two_label + three_label
 
 
-  plt.scatter(np.arange(len(preds)),np.array(preds),color="red")
+  plt.scatter(names,np.array(preds),color="red")
   plt.scatter(np.arange(len(preds)),labels,color = "green")
   plt.axvline(x=len(zer0_label))
   plt.axhline(y = sum(zer0_pred)/len(zer0_pred),xmin=0,xmax=(len(zer0_label)+2)/len(labels),color="yellow")
@@ -45,6 +45,8 @@ def plot_graph(predictions,labels):
   plt.axhline(y = sum(three_pred)/len(three_pred),xmin=(len(two_label)+14)/len(labels),xmax=(len(three_label)+30)/len(labels),color="yellow")
   plt.axvline(x=len(zer0_label)+len(one_label))
   plt.axvline(x=len(zer0_label)+len(one_label)+len(two_label))
+  plt.tick_params(axis='x', which='major',rotation=80)
+  
 
 
 

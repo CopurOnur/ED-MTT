@@ -26,6 +26,7 @@ class OpenFaceDataset(Dataset):
       self.case=case
       self.file_list = []
       self.label_list = []
+      self.name_list = []
       self.columns=[]
       self.level = cfg.data.level
       labels = pd.read_excel(l_dir,header=None)
@@ -48,7 +49,8 @@ class OpenFaceDataset(Dataset):
         label = labels[labels[0]==face_feature.split(".")[0]]
         if len(label)==0:
           continue
-        self.label_list.append(label[1].values[0]) 
+        self.label_list.append(label[1].values[0])
+        self.name_list.append(face_feature) 
         self.file_list.append(os.path.join(root + self.case,face_feature))
 
       self.col_names = pd.read_csv(self.file_list[0], delimiter=',').columns
@@ -132,7 +134,7 @@ class OpenFaceDataset(Dataset):
 
 
     def __getitem__(self, idx):
-        anchor_x, anchor_y = self.all_features[idx], torch.tensor(self.label_list[idx]).float()
+        anchor_x, anchor_y, anchor_name = self.all_features[idx], torch.tensor(self.label_list[idx]).float(), self.name_list[idx]
 
         if idx in self.label_dict["zero_one"]:
           positive_idx = random.choice(self.label_dict["zero_one"])
@@ -155,6 +157,7 @@ class OpenFaceDataset(Dataset):
         return dict(
           anchor_sequence = shape_data(anchor_x), 
           anchor_label = anchor_y,
+          anchor_name = anchor_name,
           positive_sequence = shape_data(positive_x),
           positive_label = positive_y,
           negative_sequence = shape_data(negative_x),
