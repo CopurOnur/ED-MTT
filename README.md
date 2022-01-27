@@ -17,7 +17,7 @@ The engagement level feedback is important because:
 
 # Model Architecture
 
-![triplet_loss.png](readme_files/triplet_loss.png)
+![architecture.png](readme_files/architecture.png)
 
 The proposed system first extracts features with OpenFace, then aggregates frames in a window for calculating feature statistics as additional features. Finally,  uses Bi-LSTM for generating vector embeddings from input sequences. In this system, we introduce a triplet loss as an auxiliary task and design the system as a multi-task training framework by taking inspiration from, where self-supervised contrastive learning of multi-view facial expressions was introduced. To the best of our knowledge, this is a novel approach in engagement detection literature. The key novelty of this work is the multi-task training framework using triplet loss together with Mean Squared Error (MSE). The main contributions of this paper are as follows:
 
