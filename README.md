@@ -1,6 +1,6 @@
 # ED-MTT 
 
-A novel Engagement Detection with Multi-Task Training (ED-MTT) system which minimizes MSE and triplet loss together to determine the engagement level of students in an e-learning environment. You can check the colab notebook bellow for detailed explanatoins about data loading and code execution.
+A novel Engagement Detection with Multi-Task Training (ED-MTT) system which minimizes MSE and triplet loss together to determine the engagement level of students in an e-learning environment. Please refer to our [arXiv](https://arxiv.org/pdf/2204.04020.pdf) paper for further details. You can also check the colab notebook bellow for detailed explanatoins about data loading and code execution.
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1cDfwW4JwmMabhMM48bfmVpmiO_qDCVtY?usp=sharing)
 
@@ -77,3 +77,15 @@ To train the experiments and manage the experiments, we used PyTorch Lightning t
 
 are shown in [ED-MTT.ipynb colab notebook](https://colab.research.google.com/drive/1cDfwW4JwmMabhMM48bfmVpmiO_qDCVtY?usp=sharing).
 
+# Citation
+If you used ED-MTT, please cite our paper using the bibTeX bellow. 
+
+```bibtex
+@inproceedings{copur2022edmtt,
+  title={Engagement Detection with Multi-Task Training in E-Learning Environments},
+  author={Copur, Onur and Nakip, Mert and Scardapane, Simone and Slowack, Jurgen},
+  booktitle = {International Conference on Image Analysis and Processing (ICIAP 2021)},
+  month = {In Press},
+  year = {2022}
+}
+```
